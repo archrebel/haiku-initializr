@@ -18,6 +18,12 @@ Once you label Nodes in the Architectural Haiku with the values you need, you ca
 
 For example, a an application gateway in our typical projects will use spring-cloud-zuul, spring-cloud-eureka and spring-boot-actuator dependencies. 
 
-The Haiku Initializr takes as its input architectural model - exported as json from Architectural Haiku, along with mapping configuration and produces Spring starters created by the Spring Initializr. 
+The Haiku Initializr takes as its inputs:
+ * architectural model - exported as json from Architectural Haiku and
+ * Spring Initializr mapping configuration.  
+ 
+ After running, it produces Spring starters created by the Spring Initializr. 
+ 
+ As an example of possible configuration values, please give a look at the HaikuConfiguration.java. 
 
 ## ... to be continued
