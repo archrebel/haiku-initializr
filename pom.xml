@@ -12,7 +12,7 @@
         and Spring Initializr (https://start.spring.io)
     </description>
     <properties>
-        <jackson.version>2.9.6</jackson.version>
+        <jackson.version>2.10.2</jackson.version>
     </properties>
     <dependencies>
         <dependency>
