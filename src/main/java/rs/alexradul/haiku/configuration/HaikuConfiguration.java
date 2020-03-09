@@ -1,5 +1,6 @@
 package rs.alexradul.haiku.configuration;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import rs.alexradul.haiku.model.Node;
 import rs.alexradul.haiku.springinitializr.SpringInitializrRequest;
 
@@ -7,6 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class HaikuConfiguration {
     private String groupId;
     private String javaVersion;

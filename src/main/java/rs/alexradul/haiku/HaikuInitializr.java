@@ -27,6 +27,11 @@ public class HaikuInitializr {
     @Option(name = "-conf", usage = "Configuration file to use")
     private String configFile;
 
+
+    @Option(name = "-o", usage = "Output dir")
+    private String outputDir;
+
+
     @SuppressWarnings({"MismatchedQueryAndUpdateOfCollection", "FieldMayBeFinal"})
     @Argument
     private List<String> arguments = new ArrayList<>();
@@ -64,6 +69,9 @@ public class HaikuInitializr {
         haikuObjectModel = loadModel(haikuModelFilename);
         haikuConfiguration = loadConfiguration(configFile);
 
+        outputDir = StringUtils.isBlank(outputDir) ? outputDir = "." : outputDir;
+        outputDir += File.separator;
+
         return this;
     }
 
@@ -77,7 +85,7 @@ public class HaikuInitializr {
     private void generateProjects(SpringInitializrRequest request) {
         SpringInitializrRequestExecutor requestExecutor = new SpringInitializrRequestExecutor(request, objectMapper);
         try {
-            requestExecutor.execute(new File(request.getArtifactId()));
+            requestExecutor.execute(new File(outputDir , request.getArtifactId()));
         } catch (IOException e) {
             throw new RuntimeException("Cannot process " + request, e);
         }
